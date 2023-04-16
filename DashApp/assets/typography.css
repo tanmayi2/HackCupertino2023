@@ -10,13 +10,16 @@ h1 {
     color: rgb(255, 134, 112);
     text-align: center;
 }
+
 h2 {
     font-family: georgia;
     font-style: italic;
     font-size: 15pt;
     word-wrap: normal;
-    color: rgb(255, 162, 0);
-    inline-size: 700px; 
+    inline-size: 700pt;
+    color: rgb(255, 162, 0); 
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 

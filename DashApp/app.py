@@ -20,7 +20,12 @@ df = pd.read_csv("filtered_cuisines.csv")
 fig = px.choropleth(df, locations="country",
                     color="nativeCuisine", # lifeExp is a column of gapminder
                     hover_name="nativeCuisine", # column to add to hover information
-                    color_continuous_scale=px.colors.sequential.Plasma)
+                    color_continuous_scale=px.colors.sequential.Plasma, width=1300, height=800)
+fig.layout.plot_bgcolor = '#fff0d1'
+fig.layout.paper_bgcolor = '#fff0d1'
+fig.update_layout(
+    margin=dict(l=20,r=20,t=20,b=20)
+)
 fig.show()
 
 app.layout = html.Div(children=[
