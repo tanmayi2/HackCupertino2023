@@ -1,15 +1,18 @@
 # Run this app with `python app.py` and
 # visit http://127.0.0.1:8050/ in your web browser.
 
+import json
 from dash import Dash, html, dcc
 import plotly.express as px
 import pandas as pd
+from dash.dependencies import Input, Output, State
 
 app = Dash(__name__)
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
 df = pd.read_csv("filtered_cuisines.csv")
+print(df["instructions"][0])
 # df = pd.read_excel("all_cuisines.xlsx", sheet_name='Sheet1', usecols=['title', 'nativeCuisine'])
 # df = pd.DataFrame({
 #     "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
@@ -27,6 +30,7 @@ fig.update_layout(
     margin=dict(l=20,r=20,t=20,b=20),
     dragmode=False
 )
+
 fig.show()
 
 app.layout = html.Div(children=[
@@ -44,9 +48,35 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='map',
-        figure=fig
-    )
+        figure=fig,
+    ),
+
+    html.Br(),
+
+    html.Div(
+        id='output',
+        children=html.Div([
+        ])
+    ),
+
 ])
+
+
+@app.callback(
+    Output('output', 'children'),
+    Input('map', 'clickData'))
+def display_click_data(clickData):
+    #countryISO = clickData["points"]
+    if not clickData:
+        return "Nothing selected"
+    countryISO = json.dumps(clickData["points"][0]['location'])
+    for ind in df.index:
+        if df["country"][ind] == (countryISO) :
+            #print("hello")
+            return json.dumps(df["title"][ind] + "\n" + df["instructions"][ind], indent=2)
+            #print(df["instructions"][ind])
+
+    #return json.dumps(clickData, indent=2)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
