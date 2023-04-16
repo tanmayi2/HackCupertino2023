@@ -64,7 +64,7 @@ app.layout = html.Div(children=[
     html.Div(
         id='output',
         children=html.Div([
-        ])
+        ]),
     ),
 
 ])
