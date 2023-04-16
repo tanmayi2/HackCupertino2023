@@ -1,9 +1,9 @@
 # HackCupertino2023: TTITLE
 
-## ** Purpose: ** 
+## **Purpose:** 
 ### Find recipes based on cuisine through a map
 
-## ** Process: **
+## **Process:**
 
 ### Found a dataset on [Kaggle](https://www.kaggle.com/datasets/alaknandaa/recipes-data-by-cuisine?resource=download).
 
