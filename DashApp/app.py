@@ -11,7 +11,7 @@ app = Dash(__name__)
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
-df = pd.read_csv("cuisine-32 - Sheet1.csv")
+df = pd.read_csv("cuisine-32-hopefullyFinal3 - Sheet1.csv")
 # df = pd.read_excel("all_cuisines.xlsx", sheet_name='Sheet1', usecols=['title', 'nativeCuisine'])
 # df = pd.DataFrame({
 #     "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
@@ -82,7 +82,7 @@ def display_click_data(clickData):
     for ind in df.index:
         if df["country"][ind] == countryISO[1:-1] :
             #print("hello")
-            return json.dumps(df["title"][ind] + "     " + df["instructions"][ind], indent=2)
+            return json.dumps(df["title"][ind] + ": " + df["instructions"][ind], indent=2)
             #print(df["instructions"][ind])
 
     #return json.dumps(clickData, indent=2)
