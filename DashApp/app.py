@@ -24,7 +24,8 @@ fig = px.choropleth(df, locations="country",
 fig.layout.plot_bgcolor = '#fff0d1'
 fig.layout.paper_bgcolor = '#fff0d1'
 fig.update_layout(
-    margin=dict(l=20,r=20,t=20,b=20)
+    margin=dict(l=20,r=20,t=20,b=20),
+    dragmode=False
 )
 fig.show()
 
