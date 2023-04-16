@@ -82,7 +82,7 @@ def display_click_data(clickData):
     for ind in df.index:
         if df["country"][ind] == countryISO[1:-1] :
             #print("hello")
-            return json.dumps(df["title"][ind] + "\n" + df["instructions"][ind], indent=2)
+            return json.dumps(df["title"][ind] + "     " + df["instructions"][ind], indent=2)
             #print(df["instructions"][ind])
 
     #return json.dumps(clickData, indent=2)
