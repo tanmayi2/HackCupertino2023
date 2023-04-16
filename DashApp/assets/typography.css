@@ -1,9 +1,22 @@
 body {
     font-family: sans-serif;
-    background-color: rgb(255, 244, 224);
+    background-color: rgb(255, 240, 209);
 }
 
 h1 {
-    color: rgb(255, 134, 112)
+    font-family: georgia;
+    font-style: italic;
+    font-size: 30pt;
+    color: rgb(255, 134, 112);
+    text-align: center;
+}
+h2 {
+    font-family: georgia;
+    font-style: italic;
+    font-size: 15pt;
+    word-wrap: normal;
+    color: rgb(255, 162, 0);
+    inline-size: 700px; 
+    text-align: center;
 }
 

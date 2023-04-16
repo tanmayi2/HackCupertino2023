@@ -24,11 +24,17 @@ fig = px.choropleth(df, locations="country",
 fig.show()
 
 app.layout = html.Div(children=[
-    html.H1(children='Dashboard Name'),
+    html.Div(
+        children=html.Div([
+            html.H1('-- CULTURE FOODS --'),
+        ])
+    ),
 
-    html.Div(children='''
-        We hope to build stronger and closer communities by bringing people from different cultures together using our collective love for food.
-    '''),
+    html.Div(
+        children=html.Div([
+            html.H2('We hope to build stronger and closer communities by bringing people from different cultures together using our collective love for food.'),
+        ])
+    ),
 
     dcc.Graph(
         id='map',
