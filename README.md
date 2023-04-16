@@ -1,12 +1,17 @@
 # HackCupertino2023: TTITLE
 
+By Allison Yu, Savi Kolari, Tanmayi Dasari, and Tiffany Wang
+
+#
 ## **Purpose:** 
-### Find recipes based on cuisine through a map
+Users can browse cuisine recipes from all around the world and further connect with different cultures.
 
 ## **Process:**
 
-### Found a dataset on [Kaggle](https://www.kaggle.com/datasets/alaknandaa/recipes-data-by-cuisine?resource=download).
+We found a dataset on [Kaggle](https://www.kaggle.com/datasets/alaknandaa/recipes-data-by-cuisine?resource=download) and filtered the dataset into recipies from 33 different cuisines.
 
-### Used poltly to create a map with the data.
+Then, we used plotly and the dataset to create a map which catorogizes foods by cuisine. Hovering over an area shows the cuisine in that specific country. 
 
-### Added some fun additional features for users enjoyment!
+![Hovering over a country displays the cuisine.](/ScreenPic.png)
+
+Clicking on the country generates a list of all the recipies listed from that cuisine.
