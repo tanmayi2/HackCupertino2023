@@ -9,23 +9,29 @@ app = Dash(__name__)
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
+df = pd.read_csv("filtered_cuisines.csv")
+# df = pd.read_excel("all_cuisines.xlsx", sheet_name='Sheet1', usecols=['title', 'nativeCuisine'])
+# df = pd.DataFrame({
+#     "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
+#     "Amount": [4, 1, 2, 2, 4, 5],
+#     "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
+# })
 
-fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+fig = px.choropleth(df, locations="country",
+                    color="nativeCuisine", # lifeExp is a column of gapminder
+                    hover_name="nativeCuisine", # column to add to hover information
+                    color_continuous_scale=px.colors.sequential.Plasma)
+fig.show()
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='Dashboard Name'),
 
     html.Div(children='''
-        Dash: A web application framework for your data.
+        We hope to build stronger communities by bringing people from different cultures together using our collective love for food.
     '''),
 
     dcc.Graph(
-        id='example-graph',
+        id='map',
         figure=fig
     )
 ])
