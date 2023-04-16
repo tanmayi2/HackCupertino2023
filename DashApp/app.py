@@ -69,7 +69,7 @@ app.layout = html.Div(children=[
     Input('map', 'clickData'))
 def display_click_data(clickData):
     if not clickData:
-        return "Nothing selected"
+        return "Nothing selected. Click on a colored country!"
     countryISO = json.dumps(clickData["points"][0]['location'])
     for ind in df.index:
         if df["country"][ind] == countryISO[1:-1] :
