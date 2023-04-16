@@ -22,17 +22,19 @@ df = pd.read_csv("filtered_cuisines.csv")
 fig = px.choropleth(df, locations="country",
                     color="nativeCuisine", # lifeExp is a column of gapminder
                     hover_name="nativeCuisine", # column to add to hover information
-                    color_continuous_scale=px.colors.sequential.Plasma, width=1300, height=800)
+                    color_continuous_scale=px.colors.sequential.Plasma)
 fig.layout.plot_bgcolor = '#fff0d1'
 fig.layout.paper_bgcolor = '#fff0d1'
 fig.update_layout(
     margin=dict(l=20,r=20,t=20,b=20),
-    dragmode=False
+    dragmode=False,
 )
 
 fig.show()
 
 app.layout = html.Div(children=[
+    html.Div(id='rectangle'),
+
     html.Div(
         children=html.Div([
             html.H1('-- CULTURE FOODS --'),
@@ -41,13 +43,20 @@ app.layout = html.Div(children=[
 
     html.Div(
         children=html.Div([
-            html.H2('We hope to build stronger and closer communities by bringing people from different cultures together using our collective love for food.'),
+            html.H2('~ ☘︎ ☘︎ ☘︎ ~'),
+        ])
+    ),
+
+    html.Div(
+        children=html.Div([
+            html.H3('We hope to build stronger and closer communities by bringing people from different cultures together using our collective love for food.'),
         ])
     ),
 
     dcc.Graph(
         id='map',
         figure=fig,
+        style={'width': '90vw', 'height': '70vh'},
     ),
 
     html.Br(),
