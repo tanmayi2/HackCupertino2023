@@ -4,18 +4,19 @@ body {
 }
 
 h1 {
-    font-family: georgia;
-    font-style: italic;
+    font-family: Verdana;
+    font-style: bold;
     font-size: 30pt;
     color: rgb(255, 134, 112);
     text-align: center;
+    margin-bottom:0pt;
 }
 
 h2 {
     font-family: georgia;
     font-style: italic;
     font-size: 15pt;
-    color: rgb(176, 229, 102);
+    color: rgb(135, 197, 48);
     text-align: center;
 }
 
@@ -31,26 +32,30 @@ h3 {
     margin-right: auto;
 }
 
+
 #output {
     font-family: georgia;
     font-style: italic;
     font-size: 15pt;
     color: rgb(255, 162, 0);
+    border-color:rgb(255, 134, 112);
+    border-radius:5pt;
     text-align: center;
-    border-style: dashed;
-    padding: 10pt;
+    border-style:double;
+    padding: 35pt;
+
     inline-size: 700pt;
     border-width: 3pt;
-    border-color:rgb(255, 134, 112);
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30pt;
 }
 
-#rectangle{
+#rectangle1,#rectangle2{
     width: 100vw;
-    height: 5vh;
+    height: 0.1vh;
     margin-left: 0;
-    padding: 0;
+    padding-top: 35pt;
     background:rgb(255, 120, 97);
 }
 

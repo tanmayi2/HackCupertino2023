@@ -1,4 +1,4 @@
-# HackCupertino2023: TTITLE
+# HackCupertino2023: InFuse
 
 By Allison Yu, Savi Kolari, Tanmayi Dasari, and Tiffany Wang
 

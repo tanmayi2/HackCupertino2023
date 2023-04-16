@@ -33,17 +33,17 @@ fig.update_layout(
 fig.show()
 
 app.layout = html.Div(children=[
-    html.Div(id='rectangle'),
+    html.Div(id='rectangle1'),
 
     html.Div(
         children=html.Div([
-            html.H1('-- CULTURE FOODS --'),
+            html.H1('I  N  F  U  S  E  D'),
         ])
     ),
 
     html.Div(
         children=html.Div([
-            html.H2('~ ☘︎ ☘︎ ☘︎ ~'),
+            html.H2('______________'),
         ])
     ),
 
@@ -66,7 +66,7 @@ app.layout = html.Div(children=[
         children=html.Div([
         ]),
     ),
-
+    html.Div(id='rectangle2'),
 ])
 
 
