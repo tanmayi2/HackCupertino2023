@@ -40,7 +40,13 @@ app.layout = html.Div(children=[
 
     html.Div(
         children=html.Div([
-            html.H2('We hope to build stronger and closer communities by bringing people from different cultures together using our collective love for food.'),
+            html.H2('~ ☘︎ ☘︎ ☘︎ ~'),
+        ])
+    ),
+
+    html.Div(
+        children=html.Div([
+            html.H3('We hope to build stronger and closer communities by bringing people from different cultures together using our collective love for food.'),
         ])
     ),
 
